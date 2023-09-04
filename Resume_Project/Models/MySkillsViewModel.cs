@@ -4,7 +4,7 @@ public class MySkillsViewModel
 {
     public long Id { get; set; }
 
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     public bool? Normal { get; set; }
 

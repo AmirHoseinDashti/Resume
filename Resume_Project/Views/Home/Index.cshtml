@@ -26,7 +26,9 @@
     </div>
     <div class="wave-bg"></div>
 </header>
-<partial name="About"/>
+
+@await Component.InvokeAsync("About")
+
 <div class="section px-3 px-lg-4 pt-5" id="services">
     <div class="container-narrow">
         <div class="text-center mb-5">

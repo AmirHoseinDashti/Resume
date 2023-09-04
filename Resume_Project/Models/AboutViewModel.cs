@@ -1,17 +1,39 @@
-﻿namespace Resume_Project.Models
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace Resume_Project.Models
 {
     public class AboutViewModel
     {
         public long Id { get; set; }
 
-        public string Title { get; set; }
+        [DisplayName("عنوان ")]
+        public string? Title { get; set; }
 
-        public string Description { get; set; }
+        [DisplayName("توضیحات ")]
+        public string? Description { get; set; }
 
-        public string Age { get; set; }
+        [DisplayName("پروفایل ")]
+        public string? Image { get; set; }
 
-        public string Email { get; set; }
+        [DisplayName("سن ")]
+        public string? Age { get; set; }
 
-        public string Phone { get; set; }
+        [DisplayName("ایمیل ")]
+        public string? Email { get; set; }
+
+        [DisplayName("تلفن ")]
+        public string? Phone { get; set; }
+
+        public AboutViewModel(long id, string? title, string? description, string? image, string? age, string? email, string? phone)
+        {
+            Id = id;
+            Title = title;
+            Description = description;
+            Image = image;
+            Age = age;
+            Email = email;
+            Phone = phone;
+        }
     }
 }

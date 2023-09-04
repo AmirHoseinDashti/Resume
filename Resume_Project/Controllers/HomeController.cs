@@ -1,15 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Resume_Project.Models;
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+using Resume_Project.Data;
 
 namespace Resume_Project.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
-        {
-        }
+        private readonly ILogger<HomeController> _logger;
+        private MyResumeContext _context;
 
+        public HomeController(ILogger<HomeController> logger, MyResumeContext context)
+        {
+            _logger = logger;
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();
