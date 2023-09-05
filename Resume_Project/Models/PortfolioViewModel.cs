@@ -15,4 +15,8 @@ public class PortfolioViewModel
 
     [DisplayName("تصویر ")]
     public string? Image { get; set; }
+
+    [DisplayName("لینک نمونه کار ")]
+    public string? WebsiteUrl { get; set; }
+
 }

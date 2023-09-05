@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Resume_Project.Data;
 
@@ -11,9 +12,11 @@ using Resume_Project.Data;
 namespace Resume_Project.Migrations
 {
     [DbContext(typeof(MyResumeContext))]
-    partial class MyResumeContextModelSnapshot : ModelSnapshot
+    [Migration("20230905090301_initialAddUrl")]
+    partial class initialAddUrl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

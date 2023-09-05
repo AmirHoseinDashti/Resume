@@ -1,22 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Resume_Project.Data;
 
 namespace Resume_Project.ViewComponents
 {
-    public class AboutViewComponent : ViewComponent
+    public class PortfolioViewComponent:ViewComponent
     {
         private MyResumeContext _context;
 
-        public AboutViewComponent(MyResumeContext context)
+        public PortfolioViewComponent(MyResumeContext context)
         {
             _context = context;
         }
 
         public IViewComponentResult Invoke()
         {
-            var about = _context.About;
+            var portfolio = _context.Portfolio;
 
-            return View("About", about);
+            return View("Portfolio" , portfolio );
         }
     }
 }

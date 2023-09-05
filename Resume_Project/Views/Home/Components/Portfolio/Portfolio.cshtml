@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PortfolioViewModel>
+
+<div class="section px-2 px-lg-4 pt-5" id="portfolio">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="marker marker-center">نمونه کارها </h2>
+        </div>
+        <div class="grid bp-gallery pb-3 aos-init aos-animate" data-aos="zoom-in-up" data-aos-delay="100" style="position: relative; height: 397.782px;">
+            <div class="grid-sizer"></div>
+            @foreach (var item in Model)
+            {
+                <div class="grid-item" style="position: absolute; left: 49.9975%; top: 0px;">
+                    <a href="@item.WebsiteUrl">
+                        <figure class="portfolio-item">
+                            <img src="~/images/portfolio/@item.Image" data-bp="/images/portfolio/@item.Image" data-caption="" />
+                            <figcaption>
+                                <h4 class="h5 mb-0">@item.Name</h4>
+                                <div>@item.Description</div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
