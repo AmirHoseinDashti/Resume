@@ -35,7 +35,7 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <div class="usr-img-frame mr-2 rounded-circle">
-                                                                    <img alt="avatar" class="img-fluid rounded-circle" src="~/images/portfolio/@item.Image">
+                                                                <img alt="avatar" class="img-fluid rounded-circle" src="~/images/portfolio/@item.Image">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -49,8 +49,8 @@
                                                                 </svg>
                                                             </a>
                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1" style="will-change: transform;">
-                                                                <a class="dropdown-item" href="javascript:void(0);">ویرایش</a>
-                                                                <a class="dropdown-item" href="javascript:void(0);">حذف</a>
+                                                                <a class="dropdown-item" asp-page="EditPortfolio" asp-route-id="@item.Id">ویرایش</a>
+                                                                <a class="dropdown-item" asp-page="DeletePortfolio" asp-route-id="@item.Id">حذف</a>
                                                             </div>
                                                         </div>
                                                     </td>

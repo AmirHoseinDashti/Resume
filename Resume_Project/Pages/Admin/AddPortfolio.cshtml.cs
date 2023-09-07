@@ -2,7 +2,9 @@ using System.Drawing;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Resume_Project.Data;
+using Resume_Project.Extensions;
 using Resume_Project.Models;
+using Resume_Project.Statics;
 
 namespace Resume_Project.Pages.Admin
 {
@@ -28,26 +30,32 @@ namespace Resume_Project.Pages.Admin
                 return Page();
             }
 
-            var portfolio = new PortfolioViewModel()
+            var portfolio  = new PortfolioViewModel()
             {
                 Name = Portfolio.Name,
                 Description = Portfolio.Description,
                 WebsiteUrl = Portfolio.WebsiteUrl,
-                Image = Portfolio.Image!.FileName
+                Image = Guid.NewGuid() + Path.GetExtension(Portfolio.Image!.FileName)
             };
             _context.Add(portfolio);
             _context.SaveChanges();
 
             if (Portfolio.Image?.Length > 0)
             {
-                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "portfolio",
-                    Portfolio.Image.FileName);
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                //var fileName = Guid.NewGuid() + Path.GetExtension(Portfolio.Image.FileName);
+                var validFormats = new List<string>()
                 {
-                    Portfolio.Image.CopyTo(stream);
+                    ".png",
+                    ".jpg",
+                    ".jpeg"
+                };
+                var result = Portfolio.Image.UploadFile(portfolio.Image, PathTools.PortfolioImageServerPath, validFormats);
+
+                if (!result)
+                {
+                    return RedirectToAction("AddPortfolio");
                 }
             }
-
             return RedirectToAction("Index");
         }
     }

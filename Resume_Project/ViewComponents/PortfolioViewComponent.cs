@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Resume_Project.Data;
+using Resume_Project.Models;
 
 namespace Resume_Project.ViewComponents
 {
-    public class PortfolioViewComponent:ViewComponent
+    public class PortfolioViewComponent : ViewComponent
     {
         private MyResumeContext _context;
 
@@ -12,12 +13,11 @@ namespace Resume_Project.ViewComponents
         {
             _context = context;
         }
-
         public IViewComponentResult Invoke()
         {
             var portfolio = _context.Portfolio;
 
-            return View("Portfolio" , portfolio );
+            return View("Portfolio" , portfolio);
         }
     }
 }

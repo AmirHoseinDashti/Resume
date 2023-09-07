@@ -1,0 +1,52 @@
+﻿@page
+@model Resume_Project.Pages.Admin.DeletePortfolioModel
+
+<div id="flHorizontalForm" class="col-lg- layout-spacing" style="padding: 50px">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4> حذف نمونه کار</h4>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content widget-content-area">
+            <form id="general-info" class="section general-info" method="post">
+                <input type="hidden" asp-for="Portfolio.Id" />
+                <div class="info">
+                    <div class="row">
+                        <div class="col-lg-11 mx-auto">
+                            <div class="row">
+                                <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                                    <div class="form">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label asp-for="Portfolio.Name">نام پروژه</label>
+                                                    <input asp-for="Portfolio.Name" type="text" class="form-control mb-4" id="fullName" placeholder="نام پروژه" readonly>
+                                                    <span asp-validation-for="Portfolio.Name" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label asp-for="Portfolio.WebsiteUrl">لینک پروژه</label>
+                                                    <input asp-for="Portfolio.WebsiteUrl" type="text" class="form-control mb-4" id="fullName" placeholder="لینک پروژه" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Portfolio.Description" for="profession">توضیحات پروژه</label>
+                                            <input asp-for="Portfolio.Description" type="text" class="form-control mb-4" id="profession" placeholder="توضیحات پروژه" readonly>
+                                            <span asp-validation-for="Portfolio.Description" class="text-danger"></span>
+                                        </div>
+                                        <input type="submit" class="btn mb-2 btn-danger" value="حذف نمونه کار" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

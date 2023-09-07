@@ -1,0 +1,59 @@
+﻿@page
+@model Resume_Project.Pages.Admin.EditPortfolioModel
+@{
+}
+
+<div id="flHorizontalForm" class="col-lg- layout-spacing" style="padding: 50px">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4>ویرایش نمونه کار</h4>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content widget-content-area">
+            <form id="general-info" class="section general-info" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Portfolio.Id"/>
+                <div class="info">
+                    <div class="row">
+                        <div class="col-lg-11 mx-auto">
+                            <div class="row">
+                                <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                                    <div class="form">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label asp-for="Portfolio.Name">نام پروژه</label>
+                                                    <input asp-for="Portfolio.Name" type="text" class="form-control mb-4" id="fullName" placeholder="نام پروژه">
+                                                    <span asp-validation-for="Portfolio.Name" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label asp-for="Portfolio.WebsiteUrl">لینک پروژه</label>
+                                                    <input asp-for="Portfolio.WebsiteUrl" type="text" class="form-control mb-4" id="fullName" placeholder="لینک پروژه">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label asp-for="Portfolio.Image" for="customFile">تصویر پروژه</label>
+                                                <input asp-for="Portfolio.Image" type="file" class="custom-file-input" id="customFile">
+                                                <span asp-validation-for="Portfolio.Image" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Portfolio.Description" for="profession">توضیحات پروژه</label>
+                                            <input asp-for="Portfolio.Description" type="text" class="form-control mb-4" id="profession" placeholder="توضیحات پروژه">
+                                            <span asp-validation-for="Portfolio.Description" class="text-danger"></span>
+                                        </div>
+                                        <input type="submit" class="btn mb-2 btn-success" value="ویرایش نمونه کار"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

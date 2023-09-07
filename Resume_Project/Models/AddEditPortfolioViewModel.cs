@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Resume_Project.Models
 {
@@ -13,9 +15,11 @@ namespace Resume_Project.Models
         public string? Description { get; set; }
 
         [DisplayName("تصویر ")]
-        public IFormFile? Image { get; set; }
+        [Required(ErrorMessage = "لطفا {0} را انتخاب کنید")]
+        public IFormFile Image { get; set; }
 
         [DisplayName("لینک نمونه کار ")]
         public string? WebsiteUrl { get; set; }
+
     }
 }

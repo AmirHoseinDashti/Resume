@@ -580,4 +580,8 @@
     <None Include="wwwroot\Admin\sass\plugins\tagInput\tags-input.scss" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\portfolio\" />
+  </ItemGroup>
+
 </Project>
