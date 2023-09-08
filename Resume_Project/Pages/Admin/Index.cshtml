@@ -14,7 +14,6 @@
             </div>
             <div class="widget-content widget-content-area">
                 <form>
-
                     <div class="section pt-4 px-3 px-lg-4" id="about">
                         <div class="container-narrow">
                             <div class="row">
@@ -43,12 +42,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-5 offset-md-1 aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">
-                                    <img class="avatar img-fluid mt-2" src="/images/avatar.jpg" width="400" height="400" alt="Walter Patterson">
+                                    <img class="avatar img-fluid mt-2" src="~/images/about/@about.Image" width="400" height="400" alt="Walter Patterson">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3">تغییر اطلاعات من</button>
+                    <a class="btn btn-primary mt-3" asp-page="./About/Edit" asp-route-id="@about.Id">تغییر اطلاعات من</a>
                 </form>
             </div>
         </div>

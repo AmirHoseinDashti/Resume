@@ -69,11 +69,11 @@ namespace Resume_Project.Pages.Admin
 
                 if (!result)
                 {
-                    return RedirectToAction("AddPortfolio");
+                    return RedirectToAction("Portfolio/AddPortfolio");
                 }
             }
 
-            return RedirectToPage("Portfolio");
+            return RedirectToPage("Portfolio/Portfolio");
         }
     }
 }

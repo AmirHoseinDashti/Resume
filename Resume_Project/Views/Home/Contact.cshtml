@@ -1,60 +1,53 @@
-﻿@using Resume_Project.Statics
-@using Microsoft.AspNetCore.Mvc.TagHelpers
-@{
-    ViewData["Title"] = "ارتباط با من";
-}
+﻿@model ContactViewModel
+
 <div class="section px-2 px-lg-4 pb-4 pt-5 mb-5" id="contact">
     <div class="container-narrow">
         <div class="text-center mb-5">
-            <h2 class="marker marker-center">Contact Me</h2>
+            <h2 class="marker marker-center">ارتباط با من</h2>
         </div>
         <div class="row">
             <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
                 <div class="bg-light my-2 p-3 pt-2">
-                    <form action="https://formspree.io/your@email.com"
-                          method="POST">
+                    <form asp-action="Contact"
+                          method="post">
                         <div class="form-group my-2">
-                            <label for="name" class="form-label fw-bolder">Name</label>
-                            <input class="form-control" type="text" id="name" name="name" required>
+                            <label asp-for="Name">نام و نام خانوادگی</label>
+                            <input asp-for="Name" class="form-control" type="text">
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                         <div class="form-group my-2">
-                            <label for="email" class="form-label fw-bolder">Email</label>
-                            <input class="form-control" type="email" id="email" name="_replyto" required>
+                            <label asp-for="Email" class="form-label fw-bolder">ایمیل</label>
+                            <input asp-for="Email" class="form-control" type="email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="form-group my-2">
-                            <label for="message" class="form-label fw-bolder">Message</label>
-                            <textarea class="form-control" style="resize: none;" id="message" name="message" rows="4" required></textarea>
+                            <label asp-for="Message" class="form-label fw-bolder">پیام مورد نظر</label>
+                            <textarea asp-for="Message" class="form-control" style="resize: none;" ></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
                         </div>
-                        <button class="btn btn-primary mt-2" type="submit">Send</button>
+                        <button class="btn btn-primary mt-2" type="submit">ارسال پیام</button>
                     </form>
                 </div>
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
                 <div class="mt-3 px-1">
-                    <div class="h5">Let’s talk how I can help you!</div>
-                    <p>If you like my work and want to avail my services then drop me a message using the contact form. </p>
-                    <p>Or get in touch using my email, skype or my contact number.</p>
-                    <p>See you!</p>
+                    <div class="h5">!پیام خودت رو برام بنویس</div>
+                    <p>اگر از کار من خوشت اومده و می خوای از خدمات من استفاده کنی، با استفاده از فرم تماس برای من پیام ارسال کن </p>
+                    <p>یا با استفاده از ایمیل یا شماره تماس با من در تماس باش</p>
                 </div>
                 <div class="mt-53 px-1">
                     <div class="row">
                         <div class="col-sm-2">
-                            <div class="pb-1">Email:</div>
+                            <div class="pb-1">AmirDashtiDev@gmail.com</div>
                         </div>
                         <div class="col-sm-10">
-                            <div class="pb-1 fw-bolder">walter@company.com</div>
+                            <div class="pb-1 fw-bolder">: ایمیل</div>
                         </div>
                         <div class="col-sm-2">
-                            <div class="pb-1">Skype:</div>
+                            <div class="pb-1">09302280604</div>
                         </div>
                         <div class="col-sm-10">
-                            <div class="pb-1 fw-bolder">username@skype.com</div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="pb-1">Phone:</div>
-                        </div>
-                        <div class="col-sm-10">
-                            <div class="pb-1 fw-bolder">+0718-111-0011</div>
+                            <div class="pb-1 fw-bolder">: تلفن</div>
                         </div>
                     </div>
                 </div>

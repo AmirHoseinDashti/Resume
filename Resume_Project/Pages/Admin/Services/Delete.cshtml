@@ -1,0 +1,42 @@
+﻿@page
+@model Resume_Project.Pages.Admin.Services.DeleteModel
+
+
+<div id="flHorizontalForm" class="col-lg- layout-spacing" style="padding: 50px">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4> حذف خدمات</h4>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content widget-content-area">
+            <form id="general-info" class="section general-info" method="post">
+                <input type="hidden" asp-for="Services.Id" />
+                <div class="info">
+                    <div class="row">
+                        <div class="col-lg-11 mx-auto">
+                            <div class="row">
+                                <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                                    <div class="form">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label asp-for="Services.Title">نام خدمات</label>
+                                                    <input asp-for="Services.Title" type="text" class="form-control mb-4" id="fullName" placeholder="نام خدمات" readonly>
+                                                    <span asp-validation-for="Services.Title" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="submit" class="btn mb-2 btn-danger" value="حذف خدمات" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

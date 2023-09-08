@@ -581,6 +581,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\about\" />
     <Folder Include="wwwroot\images\portfolio\" />
   </ItemGroup>
 

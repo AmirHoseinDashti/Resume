@@ -16,5 +16,6 @@ namespace Resume_Project.Data
         public DbSet<MySkillsViewModel> Skills { get; set; }
         public DbSet<PortfolioViewModel> Portfolio { get; set; }
         public DbSet<UserViewModel> User { get; set; }
+        public DbSet<ContactViewModel> Contact { get; set; }
     }
 }

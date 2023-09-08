@@ -3,6 +3,7 @@ using Resume_Project.Models;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Resume_Project.Data;
+using Microsoft.Win32;
 
 namespace Resume_Project.Controllers
 {
@@ -21,10 +22,27 @@ namespace Resume_Project.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+
+        [HttpPost]
+        [Route("Contact")]
+        public IActionResult Contact(ContactViewModel contact)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            ContactViewModel contacts = new ContactViewModel()
+            {
+                Name = contact.Name,
+                Email = contact.Email,
+                Message = contact.Message
+            };
+            _context.Add(contacts);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
