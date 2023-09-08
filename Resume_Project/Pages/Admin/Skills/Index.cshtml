@@ -1,0 +1,127 @@
+﻿@page
+@model Resume_Project.Pages.Admin.Skills.IndexModel
+
+@*<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Normal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Medium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Professional)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MySkillsViewModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Normal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medium)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Professional)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+
+<div id="flHorizontalForm" class="col-lg-12 layout-spacing" style="padding: 50px">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4>مهارت ها</h4>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content widget-content-area">
+            <form>
+
+                <div id="about">
+                    <div class="container-narrow">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="widget-content widget-content-area">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped mb-4">
+                                            <thead>
+                                            <tr>
+                                                <th>عنوان مهارت</th>
+                                                <th> سطح مبتدی </th>
+                                                <th>سطح متوسط</th>
+                                                <th>سطح پیشرفته</th>
+                                                <th class="text-center">امکانات</th>
+                                            </tr>
+                                            </thead>
+                                            @foreach (var item in Model.MySkillsViewModel)
+                                            {
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Title)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Normal)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Medium)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Professional)
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="dropdown custom-dropdown">
+                                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                                    <circle cx="12" cy="12" r="1"></circle>
+                                                                    <circle cx="19" cy="12" r="1"></circle>
+                                                                    <circle cx="5" cy="12" r="1"></circle>
+                                                                </svg>
+                                                            </a>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1" style="will-change: transform;">
+                                                                <a class="dropdown-item" asp-page="./Edit" asp-route-id="@item.Id">ویرایش</a>
+                                                                <a class="dropdown-item" asp-page="./Delete" asp-route-id="@item.Id">حذف</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            }
+                                        </table>
+                                        <button asp-page="Create" class="btn btn-primary mt-3">افزودن مهارت</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

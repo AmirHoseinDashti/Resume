@@ -14,7 +14,8 @@ namespace Resume_Project.Models
         public string? Description { get; set; }
 
         [DisplayName("پروفایل ")]
-        public string? Image { get; set; }
+        [Required(ErrorMessage = "لطفا {0} را انتخاب کنید")]
+        public string Image { get; set; }
 
         [DisplayName("سن ")]
         public string? Age { get; set; }
@@ -25,7 +26,7 @@ namespace Resume_Project.Models
         [DisplayName("تلفن ")]
         public string? Phone { get; set; }
 
-        public AboutViewModel(long id, string? title, string? description, string? image, string? age, string? email, string? phone)
+        public AboutViewModel(long id, string? title, string? description, string image, string? age, string? email, string? phone)
         {
             Id = id;
             Title = title;

@@ -14,7 +14,8 @@ public class PortfolioViewModel
     public string? Description { get; set; }
 
     [DisplayName("تصویر ")]
-    public string? Image { get; set; }
+    [Required(ErrorMessage = "لطفا {0} را انتخاب کنید")]
+    public string Image { get; set; }
 
     [DisplayName("لینک نمونه کار ")]
     public string? WebsiteUrl { get; set; }

@@ -11,5 +11,6 @@ public class MyServicesViewModel
     public string? Title { get; set; }
 
     [DisplayName("تصویر ")]
-    public string? Image { get; set; }
+    [Required(ErrorMessage = "لطفا {0} را انتخاب کنید")]
+    public string Image { get; set; }
 }

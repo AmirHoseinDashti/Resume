@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Resume_Project.Data;
 using Resume_Project.Data.Repositories;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,10 +54,25 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.Use(async (context, next) =>
+{
+    // Do work that doesn't write to the Response.
+    if (context.Request.Path.StartsWithSegments("/Admin"))
+    {
+        if (!context.User.Identity!.IsAuthenticated)
+        {
+            context.Response.Redirect("/Login");
+        }
+        else if (!bool.Parse(context.User.FindFirstValue("IsAdmin")!))
+        {
+            context.Response.Redirect("/Login");
+        }
+    }
+    await next.Invoke();
+    // Do logging or other work that doesn't write to the Response.
+});
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();

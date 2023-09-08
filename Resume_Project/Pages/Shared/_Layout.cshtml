@@ -82,10 +82,13 @@
                     </a>
                     <ul class="collapse submenu recent-submenu mini-recent-submenu list-unstyled show" id="dashboard" data-parent="#accordionExample">
                         <li>
-                            <a asp-page="./Portfolio"> نمونه کارها </a>
+                                <a asp-page="./Portfolio/Portfolio"> نمونه کارها </a>
                         </li>
                         <li>
-                                <a asp-page="./AddPortfolio"> افزودن نمونه کار </a>
+                            <a asp-page="./Portfolio/AddPortfolio"> افزودن نمونه کار </a>
+                        </li>
+                        <li>
+                                <a asp-page="./Skills/Index"> مهارت ها </a>
                         </li>
                         <li>
                             <a asp-page="./Index"> صفحه اصلی </a>
@@ -123,5 +126,6 @@
 <script src="/Admin/plugins/apex/apexcharts.min.js"></script>
 <script src="/Admin/assets/js/dashboard/dash_1.js"></script>
 <!-- BEGIN PAGE LEVEL /Admin/plugins/CUSTOM SCRIPTS -->
+    @RenderSection("Scripts" , false)
 </body>
 </html>
