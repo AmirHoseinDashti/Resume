@@ -1,46 +1,59 @@
 ﻿@page
 @model Resume_Project.Pages.Admin.Skills.DeleteModel
 
-@{
-    ViewData["Title"] = "Delete";
-}
-
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>MySkillsViewModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MySkillsViewModel.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MySkillsViewModel.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MySkillsViewModel.Normal)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MySkillsViewModel.Normal)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MySkillsViewModel.Medium)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MySkillsViewModel.Medium)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MySkillsViewModel.Professional)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MySkillsViewModel.Professional)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="MySkillsViewModel.Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+<div class="col-lg- layout-spacing" style="padding: 50px">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4>حذف مهارت</h4>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content widget-content-area">
+            <form method="post">
+                <input type="hidden" asp-for="MySkillsViewModel.Id" />
+                <div class="info">
+                    <div class="row">
+                        <div class="col-lg-11 mx-auto">
+                            <div class="row">
+                                <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                                    <div class="form">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label asp-for="MySkillsViewModel.Title" class="control-label">عنوان مهارت</label>
+                                                    <input asp-for="MySkillsViewModel.Title" class="form-control" readonly />
+                                                    <span asp-validation-for="MySkillsViewModel.Title" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="widget-content widget-content-area">
+                                            <div class="custom-control custom-radio custom-control-inline form-group form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" asp-for="MySkillsViewModel.Normal" readonly /> @Html.DisplayNameFor(model => model.MySkillsViewModel.Normal)
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline form-group form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" asp-for="MySkillsViewModel.Medium" readonly /> @Html.DisplayNameFor(model => model.MySkillsViewModel.Medium)
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline form-group form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" asp-for="MySkillsViewModel.Professional" readonly /> @Html.DisplayNameFor(model => model.MySkillsViewModel.Professional) 
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <input type="submit" class="btn mb-2 btn-danger" value="حذف مهارت"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

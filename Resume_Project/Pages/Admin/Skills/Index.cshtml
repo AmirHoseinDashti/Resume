@@ -1,55 +1,6 @@
 ﻿@page
 @model Resume_Project.Pages.Admin.Skills.IndexModel
 
-@*<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Normal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Medium)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MySkillsViewModel[0].Professional)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.MySkillsViewModel) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Normal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Medium)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Professional)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>*@
-
-
 <div id="flHorizontalForm" class="col-lg-12 layout-spacing" style="padding: 50px">
     <div class="statbox widget box box-shadow">
         <div class="widget-header">
